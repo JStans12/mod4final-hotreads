@@ -1,5 +1,10 @@
 class Api::V1::ReadsController < ApplicationController
 
+  def index
+    @hot_reads = Read.hot
+    render json: @hot_reads
+  end
+
   def create
     read = Read.new(url: url)
     read.save
