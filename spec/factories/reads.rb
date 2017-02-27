@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :read do
-    url "MyString"
+    sequence :url do |n|
+      "http://#{n}example.com"
+    end
   end
 end
